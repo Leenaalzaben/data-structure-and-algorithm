@@ -112,9 +112,45 @@ def test_linked_list_str():
 
 
 
+def test_kth_greater_than_len():
+     link_list = LinkedList()
+     link_list.insert(1)
+     link_list.insert(2)
+     link_list.insert(3)
+     link_list.insert(4)
+     with pytest.raises(Exception):
+      link_list.kthFromEnd(5)
+    
+def test_kth_equal_to_ll_length():
+    link_list = LinkedList()
+    link_list.insert(1)
+    link_list.insert(2)
+    link_list.insert(3)
+    link_list.insert(4)
+    with pytest.raises(Exception):
+        link_list.kthFromEnd(4)
 
+def test_kth_negative():
+    link_list = LinkedList()
+    link_list.insert(1)
+    link_list.insert(2)
+    link_list.insert(3)
+    link_list.insert(4)
+    with pytest.raises(Exception):
+        link_list.kthFromEnd(-4)
 
+def test_kth_size_one():
+    link_list = LinkedList()
+    link_list.insert(1)
+    actual = link_list.kthFromEnd(0)
+    expected = 1
+    assert actual == expected
 
-
-
+def test_kth_middle_value():
+    link_list = LinkedList()
+    link_list.insert(10)
+    link_list.insert(15)
+    link_list.insert(20)
+    link_list.insert(25)
+    link_list.insert(30)
 

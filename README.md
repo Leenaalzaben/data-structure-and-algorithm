@@ -9,4 +9,4 @@
 | Code Challenge 3  |[Array-binary-search](./array-binary-search/array-binary-search.md)|
 | Code Challenge 5  |[Linked-List](./linkedListImplementation/linkedlist.md)|
 | Code Challenge 6  |[linked-list-insertions](./linkedListInsertion/linked-list-insertions.md)|
-
+| Code Challenge 7  |[linked-list-kth](./linkedListInsertion/linked-list-insertions.md)|
