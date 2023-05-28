@@ -154,3 +154,15 @@ def test_kth_middle_value():
     link_list.insert(25)
     link_list.insert(30)
 
+def test_zip_Lists():
+    linkedlist1 = LinkedList()
+    linkedlist1.insert(1)
+    linkedlist1.insert(2)
+    linkedlist1.insert(3)
+    linkedlist1.insert(4)
+
+    linkedlist2 = LinkedList()
+    linkedlist2.insert(9)
+    linkedlist2.insert(8)
+    linkedlist2.insert(7)
+    linkedlist2.insert(6) 
