@@ -28,7 +28,7 @@ class test_Linked_List(unittest.TestCase):
         self.list.insert('a')
         self.list.insert('b')
         self.list.insert('c')
-        
+           
 
 
 

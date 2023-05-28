@@ -8,3 +8,5 @@
 | Code Challenge 2  |[Array-insert-shift](./array-insert-shift/array-insert-shift.md)|
 | Code Challenge 3  |[Array-binary-search](./array-binary-search/array-binary-search.md)|
 | Code Challenge 5  |[Linked-List](./linkedListImplementation/linkedlist.md)|
+| Code Challenge 6  |[linked-list-insertions](./linkedListInsertion/linked-list-insertions.md)|
+
