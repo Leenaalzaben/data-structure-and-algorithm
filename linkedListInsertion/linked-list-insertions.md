@@ -75,76 +75,104 @@ The space complexity of the algorithm is O(1) because it uses a constant amount 
 ### Linked List Insertions _ Append
 
 ```python
- class Node:
-    def __init__(self, value):
-        self.value = value
-        self.next = None
+ 
+class Node:
 
+    def __init__(self, value, next=None):
+      
+        self.value = value
+        self.next = next
 
 class LinkedList:
-    def __init__(self):
-        self.head = None
+    def __init__(self, head=None):
+        self.head=head
+    def insert(self,value):
+      
+        node = Node(value)
+        if self.head is not None:
 
-    def append(self, new_value):
-        new_node = Node(new_value)
-        if self.head is None:
-            self.head = new_node
-        else:
-            current = self.head
-            while current.next is not None:
-                current = current.next
-            current.next = new_node
-            
-    def insertBefore(self, value, newValue):
-        if self.head is None:
-            return
+            node.next = self.head
 
-        if self.head.value == value:
-            new_node = Node(newValue)
-            new_node.next = self.head
-            self.head = new_node
-            return
+        self.head = node
 
-        n = self.head
-        while n.next is not None:
-            if n.next.value == value:
-                break
-            n = n.next
-
-        if n.next is None:
-            return
-
-        new_node = Node(newValue)
-        new_node.next = n.next
-        n.next = new_node
-
-    def insert_after(self, value, new_value):
-        new_node = Node(new_value)
-        temp = self.head
-        while temp:
-            if temp.value == value:
-                new_node.next = temp.next
-                temp.next = new_node
-                break
-            temp = temp.next
-            def kth_from_end(self, k):
-        if k <= 0:
-            return None
-        length = 0
-        current = self.head
-        while current:
-            length += 1
-            current = current.next
-        if k > length:
-            return None
-        location = length - k
-        current = self.head
-        for i in range(location):
-            current = current.next
-
-        return current.value
-
-
+    def includes(self,value):
        
+        current = self.head
 
+        while current is not None:
+            if current.value == value:
+                return True
+            current = current.next
+
+        return False
+    
+
+    def __str__(self):
+      
+
+        current = self.head
+        str = ''
+
+        while current is not None:
+            str += f"{{{current.value}}}->"
+            current = current.next
+        return str + 'None'
+    
+    def append(self, value):
+           
+        node = Node(value)
+        current = self.head
+        if self.head == None:
+            self.head = node
+            return
+
+        while current.next is not None:
+            current = current.next
+
+        current.next = node
+    def insert_before(self,value,new_value):
+        current=self.head
+        if current.value == value :
+            self.insert(new_value)
+            return
+        
+        while current is not None:
+           if current.next.value == value :
+               node = Node(new_value)
+               node.next = current.next
+               current.next = node
+
+               return
+           current=current.next
+    def insert_after(self,value,new_value):
+        current=self.head
+        if current.next.value == value :
+            self.insert(new_value)
+            return
+        
+        while current is not None:
+           if current.value == value :
+               node = Node(new_value)
+               node.next = current.next
+               current.next = node
+
+               return
+           current=current.next
+    
+    def kthFromEnd(self, k: int) -> int:
+    
+        current = self.head
+        counter = []
+        while current is not None:
+            counter.append(current)
+            current = current.next
+        length_ = len(counter)
+
+        if k < 0 :
+            raise Exception ('Negative value not accepted')
+        elif k < length_:
+            return counter[length_ - (k+1) ].value
+        else:
+         raise Exception('There is no value at that index!')
+        
             ```

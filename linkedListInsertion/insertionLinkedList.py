@@ -143,7 +143,34 @@ class LinkedList:
                return
            current=current.next
     
-    
+    def kthFromEnd(self, k: int) -> int:
+        """
+        Find the value of the node that is k nodes from the end of the linked list.
+
+        Args:
+            k: The index of the node from the end (0-indexed).
+
+        Returns:
+            The value of the node.
+
+        Raises:
+            Exception: If the provided index is negative or greater than the length of the linked list.
+        """
+        current = self.head
+        counter = []
+        while current is not None:
+            counter.append(current)
+            current = current.next
+        length_ = len(counter)
+
+        if k < 0 :
+            #  when the case  k =-1 raise exception
+            raise Exception ('Negative value not accepted')
+        elif k < length_:
+            return counter[length_ - (k+1) ].value
+        else:
+         raise Exception('There is no value at that index!')
+        
     
         
         
@@ -167,5 +194,9 @@ if __name__=="__main__":
     print(linkedlist)
     linkedlist.insert_after(1,2)
  
-
+    print(linkedlist)
+    print (linkedlist.kthFromEnd(1))
+    print (linkedlist.kthFromEnd(0))
+    # print (linkedlist.kthFromEnd(-1))
+    
 
