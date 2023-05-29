@@ -1,4 +1,4 @@
-# Challenge Title: Stack and Queue
+# Challenge Title: Stack and Queue 
 
 ## Stack Implementation
 
@@ -40,3 +40,17 @@ To run the tests, execute the following commands:
 To run the code, execute the following commands:<br>
 `python3 Queue/queue.py`<br>
 `python3 Stack/stack.py`
+
+1. What are you testing?What should it do?
+   What is the actual output?What is the expected output?
+
+    Test: Stack - Push a value onto the stack
+     Description: Tests the push() method of the Stack class to ensure that a value is successfully pushed onto the stack.
+    Stack State: [2, 1] -> [top]
+    Action: stack.push(3)
+    Stack State: [3, 2, 1] -> [top]
+    Expected Output: The stack should contain [3, 2, 1] with the top pointing to the node containing 3.
+
+    <!-- ****************************************** -->
+
+## PseudoQueue

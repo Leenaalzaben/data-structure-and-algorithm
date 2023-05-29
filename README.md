@@ -12,3 +12,5 @@
 | Code Challenge 7  |[linked-list-kth](./linkedListInsertion/linked-list-insertions.md)|
 | Code Challenge 8  |[linked-list-zip](./linkedListInsertion/zip.md)|
 | Code Challenge 10  |[stack-and-queue](./StackAndQueue/StackAndQueue.md)|
+| Code Challenge 11  |[stack-queue-pseudo](./StackAndQueue/PseudoQueue.md)|
+
