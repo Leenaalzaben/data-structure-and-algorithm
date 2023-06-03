@@ -17,3 +17,30 @@ def binary_search(arr, key):
 
 
 binary_search([1, 2, 3, 5, 6, 7], 6)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
