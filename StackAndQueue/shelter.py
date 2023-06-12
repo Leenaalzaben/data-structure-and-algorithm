@@ -83,3 +83,4 @@ if adopted_cat:
     print(f"Adopted a {adopted_cat.species} named {adopted_cat.name}")
 else:
     print("No cats available ")
+

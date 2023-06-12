@@ -4,7 +4,7 @@ Determine whether a given string containing various types of brackets (e.g., {},
 
 ## Whiteboard Process
 
-![brackets](./Brackets.png)
+![brackets](./bracket_update.png)
 
 ## Approach & Efficiency
 
@@ -41,6 +41,7 @@ def validate_brackets(n):
         return False
 ```
 
-### To Test the code
-
-> `pytest tests/testsBrackets.py`<br>
+### To Run and Test the code
+>
+> `python3 StackAndQueue/stackqueuebrackets/brackets.py`<br>
+> `pytest -s tests/testsBrackets.py` + `Choose Expression:`<br>

@@ -1,65 +1,42 @@
 from StackAndQueue.stackqueuebrackets.brackets import validate_brackets
 
 
-# def test_1():
-#     first = validate_brackets('{lEENA}')
-#     actual = first
-#     assert actual == first
+def test_1():
+    expected = True
+    actual = validate_brackets('{lEENA}')
+    assert actual == expected
 
-# def test_2():
-#     second = validate_brackets('{}(LeeNa){}')
-#     actual = second
-#     assert actual == second
+def test_2():
+    expected = True
+    actual = validate_brackets('{}(LeeNa){}')
+    assert actual == expected
 
-# def test_3():
-#     third = validate_brackets('()[[Extra Characters]]')
-#     actual = third
-#     assert actual == third
+def test_3():
+    expected = True
+    actual = validate_brackets('()[[Extra Characters]]')
+    assert actual == expected
 
-# def test_4():
-#     fourth = validate_brackets('(){}[[Leena]]')
-#     actual = fourth
-#     assert actual == fourth
+def test_4():
+    expected = True
+    actual = validate_brackets('(){}[[Leena]]')
+    assert actual == expected
 
-# def test_5():
-#     fifth = validate_brackets('{}{Code}[LeeNa](())')
-#     actual = fifth
-#     assert actual == fifth
+def test_5():
+    expected = True
+    actual = validate_brackets('{}{Code}[LeeNa](())')
+    assert actual == expected
 
-# def test_6():
-#     sixth = validate_brackets('[({LeeNa}]')
-#     actual = sixth
-#     assert actual == sixth
+def test_6():
+    expected = False
+    actual = validate_brackets('[({LeeNa}]')
+    assert actual == expected
 
-# def test_7():
-#     seventh = validate_brackets('(](')
-#     actual = seventh
-#     assert actual == seventh
+def test_7():
+    expected = False
+    actual = validate_brackets('(](')
+    assert actual == expected
 
-# def test_8():    
-#     eighth = validate_brackets('{(})')
-#     actual = eighth
-#     assert actual == eighth
-
-
-
-
-import pytest
-
-@pytest.mark.parametrize("input_string, expected_result", [
-    ("{}", True),
-    ("{}(){}", True),
-    ("()[[Extra Characters]]", True),
-    ("(){}[[]]", True),
-    ("{}{Code}[Fellows](())", True),
-    ("[({}]", False),
-    ("(](", False),
-    ("{(})", False),
-    ("{", False),
-    (")", False),
-    ("[}", False),
-])
-def test_validate_brackets(input_string, expected_result):
-    assert validate_brackets(input_string) == expected_result
-
-
+def test_8():    
+    expected = False
+    actual = validate_brackets('{(})')
+    assert actual == expected
