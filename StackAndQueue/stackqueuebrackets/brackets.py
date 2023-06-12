@@ -36,6 +36,6 @@ def validate_brackets(n):
         return False
 
 # Test the function
-expression = input("Enter an expression: ")
+expression = input(" Choose Expression: ")
 result = validate_brackets(expression)
 print("Result:", result)
