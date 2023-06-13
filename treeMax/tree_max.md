@@ -6,7 +6,7 @@ Returns: number
 
 ## Whiteboard Process
 
-![MaxTree](./MaxTree.png)
+![MaxTree](./TestTy.png)
 
 ## Approach & Efficiency
 
