@@ -34,13 +34,13 @@ class BinaryTree:
 
     def traverse(self, node):
         """
-        Recursively traverses the binary tree to find the maximum value.
+        Recursively traverses binary tree to find  maximum value.
 
         Args:
             node: The current node being traversed.
 
         Returns:
-            The maximum value found in the binary tree.
+            The maximum value found in binary tree.
         """
         if node is None:
             return float('-inf')
