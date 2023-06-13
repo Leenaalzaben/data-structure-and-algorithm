@@ -8,7 +8,7 @@ Returns: number
 
 ![MaxTree](./TestTy.png)
 
-## Approach & Efficiency
+## Approach and Efficiency
 
 The Efficiency:
 the big o for this approach will be :
