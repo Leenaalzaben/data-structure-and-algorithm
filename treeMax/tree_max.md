@@ -6,9 +6,9 @@ Returns: number
 
 ## Whiteboard Process
 
-![MaxTree](./MaxTree.png)
+![MaxTree](./TestTy.png)
 
-## Approach & Efficiency
+## Approach and Efficiency
 
 The Efficiency:
 the big o for this approach will be :
@@ -53,6 +53,7 @@ print("Maximum value:", result)
 ```
 
 ### To Run and Test the code
+>
 > `python3 -m venv .venv`<br>
 > `source .venv/bin/activate`<br>
 > `pytest tests/tests_tree_max.py`<br>
