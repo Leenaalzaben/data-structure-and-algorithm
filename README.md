@@ -22,7 +22,7 @@
 | Column 1  | Column 2  |
 | ---------------- | ---------------- |
 | Code Challenge 26  |[Insertion Sort](./insertionsort/insertionsort.md)|
-| Code Challenge 27  |[]()|
+| Code Challenge 27  |[Merge Sort]()|
 | Code Challenge 28  |[]()|
 | Code Challenge 29  |[]()|
 
