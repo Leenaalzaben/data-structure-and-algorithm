@@ -18,12 +18,10 @@
 | Code Challenge 16  |[Tree Max](./treeMax/tree_max.md)|
 
 
-
 | Column 1  | Column 2  |
 | ---------------- | ---------------- |
 | Code Challenge 26  |[Insertion Sort](./insertionsort/insertionsort.md)|
 | Code Challenge 27  |[Merge Sort](./Merge_Sort/Mergesort.md)|
 | Code Challenge 28  |[Object Sort](./objectSort/objectSort.md)|
-| Code Challenge 29  |[]()|
-
+| Code Challenge 29  |[Hash Table](./hashtable/hashtable.md)|
 
