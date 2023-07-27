@@ -1,34 +1,134 @@
-import string
+from functools import reduce
+from operator import add
 
-def repeated_word(s):
-    # Step 1: Remove punctuation from the input string
-    translator = str.maketrans('', '', string.punctuation)
-    s = s.translate(translator)
-
-    # Step 2: Split the input string into words
-    words = s.split()
-
-    # Step 3: Create a hashmap to store word frequencies
-    word_freq = {}
-
-    # Step 4: Traverse through each word and update the hashmap
-    for word in words:
-        # Convert the word to lowercase to handle case-insensitivity
-        word = word.lower()
-
-        # Increment the frequency count in the hashmap
-        word_freq[word] = word_freq.get(word, 0) + 1
-
-        # Step 5: Check if the current word is repeated
-        if word_freq[word] > 1:
-            return word
-
-    # If no repeated word found, return None
-    return None
+class Node:
+  '''
+  A class represent a node in a linked list or other data structure each node has two main componenet the value of the node and the reference to the next node.
+  args: value
+  return : nothing
+  '''
+  def __init__(self, value):
+      self.next=None 
+      self.value=value
 
 
-input_string = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."
-result = repeated_word(input_string)
 
-print("Input String:", input_string)
-print("First Repeated Word:", result)
+class LinkedList:
+    '''
+    A class representing a singly linked list data structure
+    '''
+    def __init__(self):
+        self.head = None
+
+    def insert(self, value):
+        '''
+        insert a new node with the given value at the beginning of the linked list.
+        args: value
+        output: none
+        '''
+        new_node = Node(value)
+        new_node.next = self.head
+        self.head = new_node
+
+class HashTable:
+  '''
+  what : data structure that store key-value pairs of data using buckets to increace data accessing efficiency 
+  
+  '''
+  def __init__(self,size=1024):
+    self.__size=size
+    self.__buckets=[None] *size
+    self.keys = []
+    
+  
+  def __hash(self,key):
+    '''
+    A method to return the hash code of the given key
+    arg : key
+    output: hash code of the key(index)
+    '''
+    # code = 0
+   
+    # for char in key:
+    #   code += ord(str(char)) # * weight
+    # code *= 255
+    # code = code % 1024
+    # return code
+    return reduce(add, [ord(str(char)) for char in key]) * 283 % self.__size
+    return sum([ord(str(char)) for char in key]) * 283 % self.__size
+
+  
+    
+  def set(self,key,value):
+    '''
+    Set a key-value pair in the bucket, handling collisions as              needed.
+    Arguments:
+    key : The key to be hashed and used as the identifier for the           value.
+    value : the value that is aassociated with the key
+    Returns: None
+    '''
+    index = self.__hash(key)
+    if self.__buckets[index] is None:
+      ll = LinkedList()
+      self.__buckets[index] = ll
+     
+    self.__buckets[index].insert([key,value])
+    self.keys.append(key)
+    
+    
+
+ 
+
+  def get(self,key):
+    '''
+    Retrieve the value with the given key from the hashtable
+    arg : key
+    return : value or None 
+    '''
+    index=self.__hash(key)
+    bucket = self.__buckets[index]
+    if bucket is not None : 
+      curr = bucket.head
+      while curr :
+        if curr.value[0] == key :
+          return curr.value[1]
+        curr = curr.next  
+    return None  
+    
+    
+
+  def has(self, key):
+    '''
+    A method to check if the given key exist in the hashtable.
+    arg: key
+    output: boolean
+    '''
+
+    if self.get(key):
+      return True
+    return False  
+
+    
+
+  def keys(self):
+    '''
+    args : none
+    Returns a list of all the  keys present in the Hashtable.
+    '''
+    return self.keys
+  def repeated_word(self, input_string):
+
+      cleaned_string = input_string.lower().replace(",", "").replace(".", "").replace("?", "").replace("!", "").replace("-", "")
+    
+      words = cleaned_string.split()
+      for word in words:
+          if self.has(word):
+              return word
+          else:
+              self.set(word, 1)
+      return None
+  
+  
+  
+
+  

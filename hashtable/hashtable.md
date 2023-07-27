@@ -1,8 +1,11 @@
 # Challenge Title
 
-## **Code Challenge no.30: Hash Table**
+## **Code Challenge : Hash Table**
 
-### Author : LeeNa Alzaben $$ Maysa'a Al-bataineh
+### Author : LeeNa Alzaben
+
+### The whiteboard
+![hash](./repeated_hash.png)
 
 ### Approach & Efficiency
 
@@ -13,8 +16,6 @@
 | `get(self, key)` | O(1) (Average)<br>O(n) (Worst - with collisions) | O(1)                  | Retrieves the value associated with the given key.               |
 | `has(self, key)` | O(1) (Average)<br>O(n) (Worst - with collisions) | O(1)                  | Checks if a given key exists in the hashtable.                   |
 | `keys(self)`    | O(n)                             | O(n)                  | Returns a list of all unique keys present in the hashtable.      |
-
-
 
 ### Solution
 
