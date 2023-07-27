@@ -1,5 +1,6 @@
 from functools import reduce
 from operator import add
+import string
 
 
 class Node:
@@ -112,3 +113,15 @@ class HashTable:
         Returns a list of all the  keys present in the Hashtable.
         '''
         return self.key_list
+
+    def repeated_word(self, s):
+        translator = str.maketrans('', '', string.punctuation)
+        s = s.translate(translator)
+        words = s.split()
+        word_freq = {}
+        for word in words:
+            word = word.lower()
+            if word in word_freq:
+                return word
+            word_freq[word] = 1
+        return None
