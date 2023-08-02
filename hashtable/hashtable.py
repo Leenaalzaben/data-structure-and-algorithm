@@ -1,5 +1,6 @@
 from functools import reduce
 from operator import add
+import string
 
 
 class Node:
@@ -112,3 +113,24 @@ class HashTable:
         Returns a list of all the  keys present in the Hashtable.
         '''
         return self.key_list
+
+    def WordRepeater(self, s):
+        '''
+        Find the first repeated word in the input sentence.
+
+        Args: (str):  The input sentence to search for a repeated word.
+
+        Returns: str >> The first repeated word if found.
+                 None >> If no repeated word is present.
+        '''
+
+        translator = str.maketrans('', '', string.punctuation)
+        s = s.translate(translator)
+        words = s.split()
+        word_freq = {}
+        for word in words:
+            word = word.lower()
+            if word in word_freq:
+                return word
+            word_freq[word] = 1
+        return None
