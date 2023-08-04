@@ -6,7 +6,7 @@
 
 ### Whiteboard Process
 
-![hash](./repeated_hash.png)
+![hash](../hashtable/repeated_hash.png)
 
 ### Approach & Efficiency
 
