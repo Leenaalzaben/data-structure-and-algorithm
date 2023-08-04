@@ -5,7 +5,7 @@
 ### Author : LeeNa Alzaben
 
 ### The whiteboard
-![hash](./repeated_hash.png)
+![hash](./des.png)
 
 ### Approach & Efficiency
 
