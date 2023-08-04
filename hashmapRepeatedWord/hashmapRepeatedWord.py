@@ -14,21 +14,24 @@ class Node:
 
 
 class LinkedList:
-    '''
-    A class representing a singly linked list data structure
-    '''
-    def __init__(self):
-        self.head = None
+  '''
+  what : A class representing a singly linked list data structure
+  '''
+  def __init__(self):
+    self.head = None
 
-    def insert(self, value):
-        '''
-        insert a new node with the given value at the beginning of the linked list.
-        args: value
-        output: none
-        '''
-        new_node = Node(value)
-        new_node.next = self.head
-        self.head = new_node
+
+  def insert (self, value):
+    '''
+    insert a new node with the given value at the begining of     the linked list.
+    args: value
+    output : none
+    
+    '''
+    new_node = Node(value)
+    new_node.next = self.head
+    self.head = new_node
+
 
 class HashTable:
   '''
@@ -102,33 +105,36 @@ class HashTable:
     A method to check if the given key exist in the hashtable.
     arg: key
     output: boolean
-    '''
-
+    ''' 
     if self.get(key):
       return True
     return False  
 
     
 
-  def keys(self):
+  def get_keys(self):
     '''
     args : none
     Returns a list of all the  keys present in the Hashtable.
     '''
     return self.keys
-  def repeated_word(self, input_string):
 
-      cleaned_string = input_string.lower().replace(",", "").replace(".", "").replace("?", "").replace("!", "").replace("-", "")
-    
-      words = cleaned_string.split()
-      for word in words:
-          if self.has(word):
-              return word
-          else:
-              self.set(word, 1)
-      return None
-  
-  
-  
 
-  
+
+def repeated_word(string):
+    valid_chars = "abcdefghijklmnopqrstuvwxyz "
+    words = "".join([i for i in string.lower() if i in valid_chars])
+    hashs = HashTable()
+    for i in words.split():
+        if hashs.has(i):
+            return i
+        hashs.set(i, "i")
+
+    return "no words found"
+
+str1='Once upon a time, there was a brave princess who...'
+str2='It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only...'
+str3='It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...'
+print(1,repeated_word(str1))
+print(2,repeated_word(str2))
+print(3,repeated_word(str3))
