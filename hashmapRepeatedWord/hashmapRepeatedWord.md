@@ -6,7 +6,7 @@
 
 ### Whiteboard Process
 
-![hash](../hashtable/repeated_hash.png)
+![hash](./des.png)
 
 ### Approach & Efficiency
 
@@ -16,6 +16,5 @@ The repeated_word function efficiently finds the first repeated word in an input
 
 To run the code:
 
-- Test code: `pytest tests/test_hashmap.py`
-- Run  code: `python3 hashmapRepeatedWord/hashmapRepeatedWord.py`<br>
+- Test code: `pytest test_repeatedword.py` after cd tests
 [The Code](./hashmapRepeatedWord.py)
