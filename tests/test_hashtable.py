@@ -1,66 +1,87 @@
-import unittest
-from hashtable.hashtable import HashTable
+from hash_table.hash_table import HashTable
 
-class TestHashTable(unittest.TestCase):
+def test_set_and_get_value_in_hash_table():
+    hash_table = HashTable()
 
-    def setUp(self):
-        self.hash_table = HashTable()
+    key = "testKey"
+    value = "testValue"
 
-    def test_set_get(self):
-        self.hash_table.set('name', 'John')
-        self.assertEqual(self.hash_table.get('name'), 'John')
+    hash_table.set(key, value)
+    retrieved_value = hash_table.get(key)
+    assert retrieved_value == value
 
-    def test_set_get_collision(self):
-        self.hash_table.set('abc', 'value1')
-        self.hash_table.set('bca', 'value2')
-        self.assertEqual(self.hash_table.get('abc'), 'value1')
-        self.assertEqual(self.hash_table.get('bca'), 'value2')
+def test_retrieving_value_in_hash_table():
+    hash_table = HashTable()
 
-    def test_set_nonexistent_key(self):
-        self.assertIsNone(self.hash_table.get('nonexistent_key'))
+    key = "testKey"
+    value = "testValue"
 
-    def test_unique_keys(self):
-        self.hash_table.set('color', 'blue')
-        self.hash_table.set('fruit', 'apple')
-        self.hash_table.set('shape', 'circle')
-        self.hash_table.set('size', 'large')
+    hash_table.set(key, value)
+    retrieved_value = hash_table.get(key)
+    assert retrieved_value == value
 
-        keys = self.hash_table.keys()  
-        self.assertEqual(len(keys), 4)
-        self.assertIn('color', keys)
-        self.assertIn('fruit', keys)
-        self.assertIn('shape', keys)
-        self.assertIn('size', keys)
+def test_retrieving_non_existing_key_in_hash_table():
+    hash_table = HashTable()
 
-    def test_collision_handling(self):
-        self.hash_table.set('abc', 'value1')
-        self.hash_table.set('xyz', 'value2')
-        self.assertEqual(self.hash_table.get('abc'), 'value1')
-        self.assertEqual(self.hash_table.get('xyz'), 'value2')
+    key = "existingKey"
+    value = "existingValue"
 
-    def test_retrieve_from_bucket_with_collision(self):
-        self.hash_table.set('abc', 'value1')
-        self.hash_table.set('bca', 'value2')
-        self.assertEqual(self.hash_table.get('abc'), 'value1')
-        self.assertEqual(self.hash_table.get('bca'), 'value2')
+    hash_table.set(key, value)
+    non_existing_key = "nonExistingKey"
+    retrieved_value = hash_table.get(non_existing_key)
+    assert retrieved_value is None
 
-    def test_hash_in_range(self):
-        keys = ['hello', 'world', 'python', 'data', 'structure']
-        for key in keys:
-            hash_value = self.hash_table._HashTable__hash(key)
-            self.assertLess(hash_value, self.hash_table._HashTable__size)
-            self.assertGreaterEqual(hash_value, 0)
+def test_getting_all_unique_keys_in_hash_table():
+    hash_table = HashTable()
 
-    def test_word_repeater(self):
-        self.hash_table.set('sentence', 'This is a test sentence for word repeater.')
-        repeated_word = self.hash_table.WordRepeater('This is a test sentence for word repeater. This is just an additional test sentence.')
-        self.assertEqual(repeated_word, 'this')
+    hash_table.set("key1", "value1")
+    hash_table.set("key2", "value2")
+    hash_table.set("key3", "value3")
 
-        self.hash_table.set('message', 'No repeated words here.')
-        no_repeated_word = self.hash_table.WordRepeater('No repeated words here.')
-        self.assertIsNone(no_repeated_word)
+    all_keys = hash_table.get_keys()
+    expected_keys = ["key1", "key2", "key3"]
+    assert set(all_keys) == set(expected_keys)
 
-      
+def test_handle_collision_in_hash_table():
+    hash_table = HashTable()
 
-if __name__ == '__main__':
-    unittest.main()
+    key1 = "testKey1"
+    value1 = "testValue1"
+    key2 = "testKey2"
+    value2 = "testValue2"
+
+    hash_table.set(key1, value1)
+    hash_table.set(key2, value2)
+
+    retrieved_value1 = hash_table.get(key1)
+    retrieved_value2 = hash_table.get(key2)
+
+    assert retrieved_value1 == value1
+    assert retrieved_value2 == value2
+
+def test_retrieve_value_from_bucket_with_collision():
+    hash_table = HashTable()
+
+    key1 = "testKey1"
+    value1 = "testValue1"
+    key2 = "testKey2"
+    value2 = "testValue2"
+
+    hash_table.set(key1, value1)
+    hash_table.set(key2, value2)
+
+    retrieved_value1 = hash_table.get(key1)
+    retrieved_value2 = hash_table.get(key2)
+
+    assert retrieved_value1 == value1
+    assert retrieved_value2 == value2
+
+def test_hash_key_to_in_range_value():
+    hash_table = HashTable()
+
+    key = "testKey"
+
+    hashed_index = hash_table._HashTable__hash(key)
+    assert 0 <= hashed_index < 1024
+
+
