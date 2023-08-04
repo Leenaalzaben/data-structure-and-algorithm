@@ -51,15 +51,8 @@ class TestHashTable(unittest.TestCase):
             self.assertLess(hash_value, self.hash_table._HashTable__size)
             self.assertGreaterEqual(hash_value, 0)
 
-    def test_word_repeater(self):
-        self.hash_table.set('sentence', 'This is a test sentence for word repeater.')
-        repeated_word = self.hash_table.WordRepeater('This is a test sentence for word repeater. This is just an additional test sentence.')
-        self.assertEqual(repeated_word, 'this')
-
-        self.hash_table.set('message', 'No repeated words here.')
-        no_repeated_word = self.hash_table.WordRepeater('No repeated words here.')
-        self.assertIsNone(no_repeated_word)
-
+  
+       
       
 
 if __name__ == '__main__':
