@@ -114,14 +114,4 @@ class HashTable:
         '''
         return self.key_list
 
-    def repeated_word(self, s):
-        translator = str.maketrans('', '', string.punctuation)
-        s = s.translate(translator)
-        words = s.split()
-        word_freq = {}
-        for word in words:
-            word = word.lower()
-            if word in word_freq:
-                return word
-            word_freq[word] = 1
-        return None
+
