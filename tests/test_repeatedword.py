@@ -1,4 +1,4 @@
-from hash_table.hash_table import HashTable
+from hashtable.hashtable import HashTable
 from hashmapRepeatedWord.hashmapRepeatedWord import repeated_word
 
 
