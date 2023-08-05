@@ -6,9 +6,11 @@
 
 ### The whiteboard
 
-![hash](./tree_intersection.png)
+![TreeIntersection](./treeintersectionUpdated.png)
 
 ### Approach & Efficiency
+
+Create a method that find the common values between two binary trees
 
 - **Time complexity** of `tree_intersection`: O(n1 + n2), where n1 and n2 are the number of nodes in `tree1` and `tree2` respectively.
 
@@ -20,5 +22,6 @@
 
 To run the code:
 
-- Test code: `pytest tests/test_treeIntersection.py` inside tests file.
-[code](./treeIntersection.py)
+- Test code: `pytest tests/test_treeIntersection.py`
+- Run code : `python3 TreeIntersection/treeIntersection.py`<br>
+[Tree Intersection Code](./treeIntersection.py)

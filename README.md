@@ -25,5 +25,7 @@
 | Code Challenge 28  |[Object Sort](./objectSort/objectSort.md)|
 | Code Challenge 29  |[Hash Table](./hashtable/hashtable.md)|
 | Code Challenge 31  |[hashmapRepeatedWord](./hashmapRepeatedWord/hashmapRepeatedWord.md)|
+| Code Challenge 32  |[Tree Intersection](./TreeIntersection/treeIntersection.md)|
+
 
 
