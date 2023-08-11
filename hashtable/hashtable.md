@@ -2,7 +2,7 @@
 
 ## **Code Challenge no.30: Hash Table**
 
-### Author : LeeNa Alzaben $$ Maysa'a Al-bataineh
+### Author : LeeNa Alzaben 
 
 ### Approach & Efficiency
 
