@@ -2,10 +2,7 @@
 
 ## **Code Challenge : Hash Table**
 
-### Author : LeeNa Alzaben
-
-### The whiteboard
-![hash](./des.png)
+### Author : LeeNa Alzaben 
 
 ### Approach & Efficiency
 
