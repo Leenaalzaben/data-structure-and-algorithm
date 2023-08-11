@@ -24,6 +24,7 @@
 | Code Challenge 27  |[Merge Sort](./Merge_Sort/Mergesort.md)|
 | Code Challenge 28  |[Object Sort](./objectSort/objectSort.md)|
 | Code Challenge 29  |[Hash Table](./hashtable/hashtable.md)|
+| Code Challenge 31  |[hashmapRepeatedWord](./hashmapRepeatedWord/hashmapRepeatedWord.md)|
+| Code Challenge 32  |[Tree Intersection](./TreeIntersection/treeIntersection.md)|
 | Code Challenge 33  |[Left Join](./hashmapLeftJoin/hashmap_left_join.md)|
 | Code Challenge 34  |[Graph](./graph/graph.md)|
-

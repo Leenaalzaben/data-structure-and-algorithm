@@ -6,3 +6,8 @@ arr = [42,8,15,23,42]
 val = 16
 new_arr = insertShiftArray(arr, val)
 print(new_arr)
+
+
+
+
+
