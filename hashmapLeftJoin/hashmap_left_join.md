@@ -10,7 +10,7 @@
 
  In this problem domain, a "left join" operation combines key-value pairs from two dictionaries based on the keys present in dictionary
 
-![left](./left.png)
+![left](./leftJoin.png)
 
 **Input:**
 
@@ -25,7 +25,6 @@
 |------------------|---------------------------------------------------------------------------------------------------|
 | List of Lists    | The result of the left join operation.
 
-![]()
 
 ### Solution
 
