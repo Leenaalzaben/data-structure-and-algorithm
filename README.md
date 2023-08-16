@@ -30,5 +30,3 @@
 | Code Challenge 34  |[Graph](./graph/graph.md)|
 | Code Challenge 37  |[GraphBusinessTrip](./graph/graphBusinessTrip.md)|
 | Code Challenge 38  |[graphdepthfirst](./graph/graphDepthFiest.md)|
-
-
