@@ -29,7 +29,6 @@
 | Code Challenge 33  |[Left Join](./hashmapLeftJoin/hashmap_left_join.md)|
 | Code Challenge 34  |[Graph](./graph/graph.md)|
 | Code Challenge 37  |[GraphBusinessTrip](./graph/graphBusinessTrip.md)|
-| Code Challenge 37  |[graphdepthfirst](./)|
 | Code Challenge 38  |[graphdepthfirst](./graph/graphDepthFiest.md)|
 
 
