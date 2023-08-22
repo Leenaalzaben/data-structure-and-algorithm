@@ -1,43 +1,36 @@
 class Graph:
     def __init__(self):
-        self.graph = {}
+        self.adjacency_list = {}
 
-    def add_node(self, node):
-        if node not in self.graph:
-            self.graph[node] = []
+    def add_vertex(self, value):
+        self.adjacency_list[value] = []
+        return value
 
-    def add_edge(self, node1, node2):
-        self.add_node(node1)
-        self.add_node(node2)
-        self.graph[node1].append(node2)
+    def add_edge(self, start_vertex, end_vertex):
+        self.adjacency_list[start_vertex].append(end_vertex)
 
-    def depth_first(self, start_node):
+    def depth_first(self, start_vertex):
+
+
+        """
+        Perform depth-first traversal on the graph starting from the given vertex.
+
+        Args:
+            start vertex : The vertex to start the traversal from.
+
+        Returns:
+            list: A list of vertices visited in the depth-first order.
+        """
+
         visited = set()
-        traversal_order = []
+        result = []
 
-        def dfs(node):
-            nonlocal traversal_order
-            visited.add(node)
-            traversal_order.append(node)
-
-            for neighbor in self.graph[node]:
-                if neighbor not in visited:
+        def dfs(vertex):
+            if vertex not in visited:
+                visited.add(vertex)
+                result.append(vertex)
+                for neighbor in self.adjacency_list[vertex]:
                     dfs(neighbor)
 
-        dfs(start_node)
-        return traversal_order
-
-if __name__ == "__main__":
-    graph = Graph()
-    
-    graph.add_edge('A', 'B')
-    graph.add_edge('A', 'C')
-    graph.add_edge('B', 'G')
-    graph.add_edge('C', 'D')
-    graph.add_edge('C', 'E')
-    graph.add_edge('E', 'H')
-    graph.add_edge('D', 'F')
-
-    start_node = 'A'
-    traversal_order = graph.depth_first(start_node)
-    print("Result:", ', '.join(traversal_order))
+        dfs(start_vertex)
+        return result
