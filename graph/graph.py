@@ -31,7 +31,7 @@ class Queue:
         return len(self.dq)
 
 
-class Vertix:
+class Vertex:
 
     def __init__(self, value):
 
@@ -43,9 +43,9 @@ class Vertix:
 
 class Edge:
 
-    def __init__(self, vertix, weight=0):
+    def __init__(self, vertex, weight=0):
         self.weight = weight
-        self.vertix = vertix
+        self.vertex = vertex
 
 
 class Graph:
@@ -53,30 +53,30 @@ class Graph:
     def __init__(self):
         self.__adj_list = {}
 
-    def add_vertix(self, value):
+    def add_vertex(self, value):
         '''
         Arguments: value
         Returns: The added vertex
         Add a vertex to the graph
         '''
 
-        vertix = Vertix(value)
-        self.__adj_list[vertix] = []
-        return vertix
+        vertex = Vertex(value)
+        self.__adj_list[vertex] = []
+        return vertex
 
-    # def add_edge(self,start_vertix,end_vertix,weight=0):
+    # def add_edge(self,start_vertex,end_vertex,weight=0):
 
-        # edge1 = Edge(end_vertix)
-        # edge2=Edge(start_vertix)
-        # if start_vertix not in self.__adj_list:
-        #   raise KeyError(" vertix not exist ")
-        # if end_vertix not in self.__adj_list:
-        #   raise KeyError(" vertix not exist ")
+        # edge1 = Edge(end_vertex)
+        # edge2=Edge(start_vertex)
+        # if start_vertex not in self.__adj_list:
+        #   raise KeyError(" vertex not exist ")
+        # if end_vertex not in self.__adj_list:
+        #   raise KeyError(" vertex not exist ")
 
-        # self.__adj_list[start_vertix].append(edge1)
-        # self.__adj_list[end_vertix].append(edge2)
+        # self.__adj_list[start_vertex].append(edge1)
+        # self.__adj_list[end_vertex].append(edge2)
 
-    def add_edge(self, start_vertix, end_vertix, weight=0):
+    def add_edge(self, start_vertex, end_vertex, weight=0):
         '''
         Arguments: 2 vertices to be connected by the edge, weight (optional)
         Returns: nothing
@@ -84,14 +84,14 @@ class Graph:
         If specified, assign a weight to the edge
         Both vertices should already be in the Graph
         '''
-        if start_vertix not in self.__adj_list:
+        if start_vertex not in self.__adj_list:
             raise KeyError("Start vertex is not found")
-        if end_vertix not in self.__adj_list:
+        if end_vertex not in self.__adj_list:
             raise KeyError("End vertex is not found")
-        edge1 = Edge(end_vertix, weight)
-        edge2 = Edge(start_vertix)
-        self.__adj_list[start_vertix].append(edge1)
-        self.__adj_list[end_vertix].append(edge2)
+        edge1 = Edge(end_vertex, weight)
+        edge2 = Edge(start_vertex)
+        self.__adj_list[start_vertex].append(edge1)
+        self.__adj_list[end_vertex].append(edge2)
 
     def get_vertices(self):
         '''
@@ -106,7 +106,7 @@ class Graph:
     def size(self):
         return len(self.__adj_list)
 
-    def get_neighbors(self, vertix):
+    def get_neighbors(self, vertex):
         '''
         get neighbors
         A rguments: vertex
@@ -115,41 +115,66 @@ class Graph:
         Include the weight of the connection in the                      returned collection
         Empty collection returned if there are no vertices
         '''
-        # return self.__adj_list[vertix]
-        return self.__adj_list.get(vertix, [])
+        # return self.__adj_list[vertex]
+        return self.__adj_list.get(vertex, [])
 
-    def breadth_first(self, start_vertix):
+    def breadth_first(self, start_vertex):
 
         result = []
         visted = set()
         q = Queue()
 
-        q.enqueue(start_vertix)
-        visted.add(start_vertix)
+        q.enqueue(start_vertex)
+        visted.add(start_vertex)
 
         while len(q):
-            current_vertix = q.dequeue()
+            current_vertex = q.dequeue()
 
-            result.append(current_vertix.value)
+            result.append(current_vertex.value)
 
-            neighbors = self.get_neighbors(current_vertix)
+            neighbors = self.get_neighbors(current_vertex)
 
             for edge in neighbors:
-                neighbor = edge.vertix
+                neighbor = edge.vertex
                 if neighbor not in visted:
                     q.enqueue(neighbor)
                     visted.add(neighbor)
 
         return result
+    
+    def business_trip(Graph, cities):
+        if not cities or len(cities) < 2:
+            # A trip requires at least two cities
+            return None
+
+        total_cost = 0
+        for i in range(len(cities) - 1):
+            current_city = cities[i]
+            next_city = cities[i + 1]
+
+            neighbors = Graph.get_neighbors(current_city)
+            found_next_city = False
+
+            for neighbor, weight in neighbors:
+                if neighbor == next_city:
+                    total_cost += weight
+                    found_next_city = True
+                    break
+
+            if not found_next_city:
+                return None
+
+        return total_cost
+    
 
 
 if __name__ == "__main__":
     g = Graph()
-    a = g.add_vertix('A')
-    b = g.add_vertix('B')
-    e = g.add_vertix('E')
-    c = g.add_vertix('C')
-    d = g.add_vertix('D')
+    a = g.add_vertex('A')
+    b = g.add_vertex('B')
+    e = g.add_vertex('E')
+    c = g.add_vertex('C')
+    d = g.add_vertex('D')
 
     g.add_edge(a, b)
     g.add_edge(a, c)
