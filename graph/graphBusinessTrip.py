@@ -1,5 +1,3 @@
-from graph.graph import Vertex,Graph
-
 def business_trip(graph, city_names):
 
 
@@ -34,7 +32,3 @@ def business_trip(graph, city_names):
         return None
 
     return total_cost
-
-
-
-  
