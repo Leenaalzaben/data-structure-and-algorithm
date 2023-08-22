@@ -17,7 +17,6 @@
 | Code Challenge 13  |[stack-queue-brackets](./StackAndQueue/stackqueuebrackets/brackets.md)|
 | Code Challenge 16  |[Tree Max](./treeMax/tree_max.md)|
 
-
 | Column 1  | Column 2  |
 | ---------------- | ---------------- |
 | Code Challenge 26  |[Insertion Sort](./insertionsort/insertionsort.md)|
